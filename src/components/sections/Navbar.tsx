@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { KeyHint } from "@/components/ui/HintOnHover";
 
 const NAV = [
   { id: "about", label: "About" },
@@ -97,7 +98,9 @@ export function Navbar() {
             href="#contact"
             className="hidden rounded-full bg-[#39FF14] px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-wider text-black transition hover:shadow-[0_0_24px_rgba(57,255,20,0.6)] md:inline-flex"
           >
-            Hire Me
+            <span className="flex items-center">
+              Hire Me <KeyHint hint="↗" />
+            </span>
           </a>
           <button
             onClick={() => setMobileOpen((s) => !s)}

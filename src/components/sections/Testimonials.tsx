@@ -37,7 +37,7 @@ const QUOTES = [
 
 function Card({ q }: { q: (typeof QUOTES)[number] }) {
   return (
-    <div className="glass mx-3 w-[320px] flex-shrink-0 rounded-2xl p-6 sm:w-[380px]">
+    <div className="glass mx-2 w-[260px] flex-shrink-0 rounded-2xl p-5 sm:mx-3 sm:w-[320px] sm:p-6 lg:w-[380px]">
       <div className="mb-4 font-display text-3xl text-[#39FF14]">“</div>
       <p className="text-sm leading-relaxed text-zinc-300">{q.q}</p>
       <div className="mt-5 flex items-center gap-3 border-t border-white/5 pt-4">
@@ -70,14 +70,14 @@ export function Testimonials() {
         </FadeUp>
       </div>
 
-      <div className="relative mt-12">
+      <div className="relative mt-12 overflow-x-hidden">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[#0A0A0A] to-transparent"
+          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[#0A0A0A] to-transparent sm:w-24"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[#0A0A0A] to-transparent"
+          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[#0A0A0A] to-transparent sm:w-24"
         />
         <div className="marquee-track flex w-max">
           {loop.map((q, i) => (

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FadeUp, SectionLabel, SectionTitle } from "@/components/ui/Reveal";
+import { KeyHint } from "@/components/ui/HintOnHover";
 
 const SOCIALS = [
   { name: "GitHub", href: "https://github.com/", glyph: "GH" },
@@ -124,8 +125,8 @@ export function Contact() {
                   disabled={sent}
                   className="group mt-6 inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-[#39FF14] px-6 py-3.5 font-mono text-sm font-bold uppercase tracking-wider text-black transition hover:shadow-[0_0_40px_rgba(57,255,20,0.55)] disabled:opacity-70"
                 >
-                  <span className="relative z-10">
-                    {sent ? "Message sent ✓" : "Let's build something"}
+                  <span className="relative z-10 flex items-center justify-center gap-1">
+                    {sent ? "Message sent ✓" : "Let's build something"} <KeyHint hint="↵" />
                   </span>
                   {!sent && (
                     <span className="relative z-10 transition group-hover:translate-x-0.5">

@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useMotionTemplate, useMotionValue, useSpring } from "framer-motion";
 import { FadeUp, SectionLabel, SectionTitle } from "@/components/ui/Reveal";
+import { GlitchText } from "@/components/ui/GlitchText";
 
 type Project = {
   title: string;
@@ -134,9 +135,9 @@ function TiltCard({ p, i }: { p: Project; i: number }) {
           </span>
         </div>
 
-        <h3 className="mt-6 font-display text-3xl font-bold text-white">
+        <GlitchText className="mt-6 font-display text-3xl font-bold">
           {p.title}
-        </h3>
+        </GlitchText>
         <p className="mt-3 text-sm leading-relaxed text-zinc-400">
           {p.description}
         </p>

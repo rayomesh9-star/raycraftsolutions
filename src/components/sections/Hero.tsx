@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Odometer, InfinityStat } from "@/components/ui/Odometer";
+import { KeyHint } from "@/components/ui/HintOnHover";
 
 const SNIPPET = `> initializing portfolio...
 > designing experience ✦
@@ -114,7 +116,9 @@ export function Hero() {
               href="#work"
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-[#39FF14] px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider text-black transition hover:shadow-[0_0_40px_rgba(57,255,20,0.55)]"
             >
-              <span className="relative z-10">View My Work</span>
+              <span className="relative z-10 flex items-center">
+                View My Work <KeyHint hint="↗" />
+              </span>
               <span className="relative z-10 transition group-hover:translate-x-0.5">
                 →
               </span>
@@ -122,9 +126,11 @@ export function Hero() {
             </a>
             <a
               href="#contact"
-              className="rounded-full border border-white/15 bg-white/5 px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider text-white backdrop-blur transition hover:border-[#39FF14] hover:text-[#39FF14]"
+              className="group relative inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider text-white backdrop-blur transition hover:border-[#39FF14] hover:text-[#39FF14]"
             >
-              Let&apos;s Talk
+              <span className="flex items-center">
+                Let&apos;s Talk <KeyHint hint="↗" />
+              </span>
             </a>
           </motion.div>
 
@@ -132,28 +138,13 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.6 }}
-            className="mt-12 flex items-center gap-8 text-zinc-500"
+            className="mt-12 flex flex-wrap items-center justify-start gap-x-6 gap-y-3 text-zinc-500"
           >
-            <div>
-              <div className="font-display text-3xl font-bold text-white">5+</div>
-              <div className="mt-0.5 font-mono text-[10px] uppercase tracking-widest">
-                Years Coding
-              </div>
-            </div>
-            <div className="h-10 w-px bg-white/10" />
-            <div>
-              <div className="font-display text-3xl font-bold text-white">40+</div>
-              <div className="mt-0.5 font-mono text-[10px] uppercase tracking-widest">
-                Projects Shipped
-              </div>
-            </div>
-            <div className="h-10 w-px bg-white/10" />
-            <div>
-              <div className="font-display text-3xl font-bold text-[#39FF14] glow-text">∞</div>
-              <div className="mt-0.5 font-mono text-[10px] uppercase tracking-widest">
-                Curiosity
-              </div>
-            </div>
+            <Odometer value={5} label="Years Coding" />
+            <div className="hidden h-8 w-px bg-white/10 sm:block" />
+            <Odometer value={40} label="Projects Shipped" />
+            <div className="hidden h-8 w-px bg-white/10 sm:block" />
+            <InfinityStat label="Curiosity" />
           </motion.div>
         </div>
 
@@ -176,7 +167,7 @@ export function Hero() {
               </div>
               <div className="h-3 w-3" />
             </div>
-            <pre className="m-0 overflow-x-auto px-5 py-5 font-mono text-[13px] leading-relaxed text-zinc-300">
+            <pre className="m-0 overflow-x-auto break-all px-5 py-5 font-mono text-[13px] leading-relaxed text-zinc-300">
               <code>
                 {typed}
                 <span
