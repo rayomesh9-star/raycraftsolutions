@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Odometer, InfinityStat } from "@/components/ui/Odometer";
+
 import { KeyHint } from "@/components/ui/HintOnHover";
 
 const SNIPPET = `> initializing portfolio...
@@ -134,18 +134,6 @@ export function Hero() {
             </a>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
-            className="mt-12 flex flex-wrap items-center justify-start gap-x-6 gap-y-3 text-zinc-500"
-          >
-            <Odometer value={5} label="Years Coding" />
-            <div className="hidden h-8 w-px bg-white/10 sm:block" />
-            <Odometer value={40} label="Projects Shipped" />
-            <div className="hidden h-8 w-px bg-white/10 sm:block" />
-            <InfinityStat label="Curiosity" />
-          </motion.div>
         </div>
 
         {/* Code panel */}

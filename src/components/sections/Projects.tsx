@@ -13,68 +13,74 @@ type Project = {
   year: string;
   href: string;
   accent: string;
+  image: string;
 };
 
 const PROJECTS: Project[] = [
   {
-    title: "NeonCart",
-    tag: "E-commerce Platform",
+    title: "newjoweb-site",
+    tag: "Web Design",
     description:
-      "Headless commerce storefront with a custom design system and sub-100ms interactions.",
-    tech: ["Next.js", "Stripe", "Sanity"],
-    year: "2025",
-    href: "#",
+      "A responsive website for a graphics design company, optimized for both PC and mobile.",
+    tech: ["HTML", "CSS"],
+    year: "2024",
+    href: "https://github.com/rayomesh9-star/newjoweb-site",
     accent: "from-[#39FF14]/40 to-transparent",
+    image: "/screenshots/newjoweb-site.svg",
   },
   {
-    title: "Pulse OS",
-    tag: "SaaS Dashboard",
+    title: "joweb-site",
+    tag: "Web Design",
     description:
-      "Realtime analytics dashboard for fintech ops teams. 60fps, 50+ chart types, themable.",
-    tech: ["React", "D3", "WebSockets"],
+      "A clean, responsive website built with HTML.",
+    tech: ["HTML", "CSS"],
     year: "2024",
-    href: "#",
+    href: "https://github.com/rayomesh9-star/joweb-site",
     accent: "from-[#7CFF00]/40 to-transparent",
+    image: "/screenshots/joweb-site.svg",
   },
   {
-    title: "Formlab",
-    tag: "Design Tool",
-    description:
-      "Collaborative design tool for product teams — think FigJam meets a real component editor.",
-    tech: ["TypeScript", "Canvas", "Yjs"],
-    year: "2024",
-    href: "#",
+    title: "Blackburn",
+    tag: "Personal Project",
+    description: "BlackBurn: Embrace yourself!",
+    tech: ["HTML", "CSS"],
+    year: "2023",
+    href: "https://github.com/rayomesh9-star/Blackburn",
     accent: "from-emerald-400/30 to-transparent",
+    image: "/screenshots/blackburn.svg",
   },
   {
-    title: "Atlas Travel",
-    tag: "Brand & Web",
+    title: "KPEO",
+    tag: "Non-Profit",
     description:
-      "Brand identity, marketing site, and booking flow for a boutique travel startup.",
-    tech: ["Figma", "Next.js", "GSAP"],
-    year: "2024",
-    href: "#",
+      "An organization dedicated to eradicating poverty through education, clean water access, food security, environmental sustainability, and community empowerment.",
+    tech: ["HTML", "CSS"],
+    year: "2023",
+    href: "https://github.com/rayomesh9-star/KPEO",
     accent: "from-lime-300/30 to-transparent",
+    image: "/screenshots/kpeo.svg",
   },
   {
-    title: "Hollow Studio",
-    tag: "Portfolio & CMS",
+    title: "raycraftsolutions",
+    tag: "Portfolio",
     description:
-      "Minimalist portfolio platform for visual artists — fast, art-first, and easy to self-host.",
-    tech: ["Astro", "MDX", "Cloudflare"],
-    year: "2023",
-    href: "#",
+      "A basic portfolio website showcasing works and services.",
+    tech: ["TypeScript", "React"],
+    year: "2024",
+    href: "https://github.com/rayomesh9-star/raycraftsolutions",
     accent: "from-[#39FF14]/30 to-transparent",
+    image: "/screenshots/raycraftsolutions.svg",
   },
   {
-    title: "Cipher Editor",
-    tag: "Developer Tool",
+    title: "MAB-WONDERLUST-SAFARIS",
+    tag: "Travel & Tourism",
     description:
-      "A keyboard-first markdown editor with end-to-end encrypted sync and a slick command palette.",
-    tech: ["Rust", "WASM", "React"],
+      "A Kenya-based tourism and travel company creating meaningful, memorable and authentic travel experiences across Kenya, Africa and beyond.",
+    tech: ["HTML", "CSS"],
     year: "2023",
-    href: "#",
+    href: "https://github.com/rayomesh9-star/MAB-WONDERLUST-SAFARIS",
     accent: "from-[#7CFF00]/30 to-transparent",
+    image: "/screenshots/mab-wonderlust-safaris.svg",
   },
 ];
 
@@ -133,6 +139,19 @@ function TiltCard({ p, i }: { p: Project; i: number }) {
           <span className="font-mono text-[10px] text-zinc-600">
             {p.year}
           </span>
+        </div>
+
+        <div className="mt-4 overflow-hidden rounded-xl border border-white/10">
+          <img
+            src={p.image}
+            alt={`${p.title} screenshot`}
+            className="h-40 w-full object-cover transition duration-500 group-hover:scale-105"
+            loading="lazy"
+            onError={(e) => {
+              const target = e.currentTarget;
+              target.style.display = "none";
+            }}
+          />
         </div>
 
         <GlitchText className="mt-6 font-display text-3xl font-bold">
