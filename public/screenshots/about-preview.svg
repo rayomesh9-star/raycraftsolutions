@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0b0b"/>
+      <stop offset="100%" stop-color="#141414"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="50" y="50" width="1100" height="700" rx="16" fill="#141414" stroke="#39FF14" stroke-opacity="0.15" stroke-width="1"/>
+  <text x="600" y="120" font-family="monospace" font-size="24" fill="#39FF14" text-anchor="middle" opacity="0.6">ABOUT SECTION</text>
+  <rect x="100" y="160" width="250" height="24" rx="4" fill="#39FF14" fill-opacity="0.15"/>
+  <rect x="100" y="200" width="600" height="100" rx="8" fill="#fff" fill-opacity="0.03"/>
+  <rect x="100" y="330" width="500" height="80" rx="8" fill="#fff" fill-opacity="0.02"/>
+  <text x="200" y="450" font-family="monospace" font-size="18" fill="#39FF14" fill-opacity="0.5">DESIGN SKILLS</text>
+  <rect x="100" y="470" width="450" height="200" rx="8" fill="#0b0b0b" stroke="#39FF14" stroke-opacity="0.1" stroke-width="1"/>
+  <text x="200" y="450" font-family="monospace" font-size="18" fill="#7CFF00" fill-opacity="0.5">TECH STACK</text>
+  <rect x="600" y="470" width="450" height="200" rx="8" fill="#0b0b0b" stroke="#7CFF00" stroke-opacity="0.1" stroke-width="1"/>
+  <text x="600" y="780" font-family="monospace" font-size="16" fill="#39FF14" fill-opacity="0.4" text-anchor="middle">The person behind the code</text>
+</svg>

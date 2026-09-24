@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0b0b"/>
+      <stop offset="100%" stop-color="#141414"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="50" y="50" width="1100" height="700" rx="16" fill="#141414" stroke="#39FF14" stroke-opacity="0.15" stroke-width="1"/>
+  <text x="600" y="120" font-family="monospace" font-size="24" fill="#39FF14" text-anchor="middle" opacity="0.6">PROCESS SECTION</text>
+  <rect x="200" y="180" width="250" height="350" rx="16" fill="#0b0b0b" stroke="#39FF14" stroke-opacity="0.2" stroke-width="1"/>
+  <circle cx="325" cy="230" r="50" fill="#39FF14" fill-opacity="0.15" stroke="#39FF14" stroke-opacity="0.3" stroke-width="2"/>
+  <text x="325" y="238" font-family="monospace" font-size="28" fill="#39FF14" text-anchor="middle">1</text>
+  <text x="325" y="310" font-family="monospace" font-size="18" fill="#fff" text-anchor="middle">Design</text>
+  <text x="325" y="340" font-family="monospace" font-size="14" fill="#39FF14" text-anchor="middle">Sketch the vision</text>
+  <rect x="475" y="180" width="250" height="350" rx="16" fill="#0b0b0b" stroke="#7CFF00" stroke-opacity="0.2" stroke-width="1"/>
+  <circle cx="600" cy="230" r="50" fill="#7CFF00" fill-opacity="0.15" stroke="#7CFF00" stroke-opacity="0.3" stroke-width="2"/>
+  <text x="600" y="238" font-family="monospace" font-size="28" fill="#7CFF00" text-anchor="middle">2</text>
+  <text x="600" y="310" font-family="monospace" font-size="18" fill="#fff" text-anchor="middle">Develop</text>
+  <text x="600" y="340" font-family="monospace" font-size="14" fill="#7CFF00" text-anchor="middle">Engineer the experience</text>
+  <rect x="750" y="180" width="250" height="350" rx="16" fill="#0b0b0b" stroke="emerald" stroke-opacity="0.2" stroke-width="1"/>
+  <circle cx="875" cy="230" r="50" fill="emerald" fill-opacity="0.15" stroke="emerald" stroke-opacity="0.3" stroke-width="2"/>
+  <text x="875" y="238" font-family="monospace" font-size="28" fill="emerald" text-anchor="middle">3</text>
+  <text x="875" y="310" font-family="monospace" font-size="18" fill="#fff" text-anchor="middle">Elevate</text>
+  <text x="875" y="340" font-family="monospace" font-size="14" fill="emerald" text-anchor="middle">Polish & ship</text>
+  <text x="600" y="780" font-family="monospace" font-size="16" fill="#39FF14" fill-opacity="0.4" text-anchor="middle">Design • Develop • Elevate</text>
+</svg>
