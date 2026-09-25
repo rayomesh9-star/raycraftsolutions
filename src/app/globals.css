@@ -177,6 +177,7 @@ body::before {
   100% { transform: translateX(-50%); }
 }
 .marquee-track { animation: marquee 40s linear infinite; }
+.group-hover\:animation-paused:hover .marquee-track { animation-play-state: paused; }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 10px; height: 10px; }

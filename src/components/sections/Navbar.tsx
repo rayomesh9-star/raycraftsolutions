@@ -7,6 +7,7 @@ import { KeyHint } from "@/components/ui/HintOnHover";
 
 const NAV = [
   { id: "about", label: "About" },
+  { id: "services", label: "Services" },
   { id: "skills", label: "Skills" },
   { id: "work", label: "Work" },
   { id: "process", label: "Process" },

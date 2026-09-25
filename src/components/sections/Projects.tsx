@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useMotionTemplate, useMotionValue, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import { FadeUp, SectionLabel, SectionTitle } from "@/components/ui/Reveal";
 import { GlitchText } from "@/components/ui/GlitchText";
 
@@ -13,7 +12,6 @@ type Project = {
   year: string;
   href: string;
   accent: string;
-  image: string;
 };
 
 const PROJECTS: Project[] = [
@@ -24,20 +22,8 @@ const PROJECTS: Project[] = [
       "A responsive website for a graphics design company, optimized for both PC and mobile.",
     tech: ["HTML", "CSS"],
     year: "2024",
-    href: "https://github.com/rayomesh9-star/newjoweb-site",
+    href: "https://rayomesh9-star.github.io/newjoweb-site/",
     accent: "from-[#39FF14]/40 to-transparent",
-    image: "/screenshots/newjoweb-site.svg",
-  },
-  {
-    title: "joweb-site",
-    tag: "Web Design",
-    description:
-      "A clean, responsive website built with HTML.",
-    tech: ["HTML", "CSS"],
-    year: "2024",
-    href: "https://github.com/rayomesh9-star/joweb-site",
-    accent: "from-[#7CFF00]/40 to-transparent",
-    image: "/screenshots/joweb-site.svg",
   },
   {
     title: "Blackburn",
@@ -45,9 +31,8 @@ const PROJECTS: Project[] = [
     description: "BlackBurn: Embrace yourself!",
     tech: ["HTML", "CSS"],
     year: "2023",
-    href: "https://github.com/rayomesh9-star/Blackburn",
+    href: "https://skhinga.github.io/Blackburn/",
     accent: "from-emerald-400/30 to-transparent",
-    image: "/screenshots/blackburn.svg",
   },
   {
     title: "KPEO",
@@ -56,9 +41,8 @@ const PROJECTS: Project[] = [
       "An organization dedicated to eradicating poverty through education, clean water access, food security, environmental sustainability, and community empowerment.",
     tech: ["HTML", "CSS"],
     year: "2023",
-    href: "https://github.com/rayomesh9-star/KPEO",
+    href: "https://rayomesh9-star.github.io/KPEO/",
     accent: "from-lime-300/30 to-transparent",
-    image: "/screenshots/kpeo.svg",
   },
   {
     title: "raycraftsolutions",
@@ -67,9 +51,8 @@ const PROJECTS: Project[] = [
       "A basic portfolio website showcasing works and services.",
     tech: ["TypeScript", "React"],
     year: "2024",
-    href: "https://github.com/rayomesh9-star/raycraftsolutions",
+    href: "https://raycraftsolutions.vercel.app",
     accent: "from-[#39FF14]/30 to-transparent",
-    image: "/screenshots/raycraftsolutions.svg",
   },
   {
     title: "MAB-WONDERLUST-SAFARIS",
@@ -78,54 +61,20 @@ const PROJECTS: Project[] = [
       "A Kenya-based tourism and travel company creating meaningful, memorable and authentic travel experiences across Kenya, Africa and beyond.",
     tech: ["HTML", "CSS"],
     year: "2023",
-    href: "https://github.com/rayomesh9-star/MAB-WONDERLUST-SAFARIS",
+    href: "https://rayomesh9-star.github.io/MAB-WONDERLUST-SAFARIS/",
     accent: "from-[#7CFF00]/30 to-transparent",
-    image: "/screenshots/mab-wonderlust-safaris.svg",
   },
 ];
 
-function TiltCard({ p, i }: { p: Project; i: number }) {
-  const ref = useRef<HTMLAnchorElement>(null);
-  const rx = useSpring(0, { stiffness: 200, damping: 20 });
-  const ry = useSpring(0, { stiffness: 200, damping: 20 });
-  const mx = useMotionValue(50);
-  const my = useMotionValue(50);
-  const bg = useMotionTemplate`radial-gradient(circle at ${mx}% ${my}%, rgba(57,255,20,0.18), transparent 60%)`;
-
-  function onMove(e: React.MouseEvent<HTMLAnchorElement>) {
-    const el = ref.current;
-    if (!el) return;
-    const r = el.getBoundingClientRect();
-    const px = (e.clientX - r.left) / r.width;
-    const py = (e.clientY - r.top) / r.height;
-    ry.set((px - 0.5) * 10);
-    rx.set(-(py - 0.5) * 10);
-    mx.set(px * 100);
-    my.set(py * 100);
-  }
-  function onLeave() {
-    rx.set(0);
-    ry.set(0);
-  }
-
+function ProjectCard({ p, i }: { p: Project; i: number }) {
   return (
-    <motion.a
-      ref={ref}
-      href={p.href}
-      onMouseMove={onMove}
-      onMouseLeave={onLeave}
-      style={{ rotateX: rx, rotateY: ry, transformPerspective: 1000 }}
+    <motion.article
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.7, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-      className="tilt-card group relative block overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#141414] to-[#0b0b0b] p-6 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.8)]"
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#141414] to-[#0b0b0b] p-6 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.8)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#39FF14]/40 hover:shadow-[0_30px_60px_-30px_rgba(57,255,20,0.25)]"
     >
-      <motion.div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-        style={{ background: bg }}
-      />
       <div
         aria-hidden
         className={`pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-gradient-to-br ${p.accent} opacity-50 blur-3xl transition group-hover:opacity-90`}
@@ -141,23 +90,24 @@ function TiltCard({ p, i }: { p: Project; i: number }) {
           </span>
         </div>
 
-        <div className="mt-4 overflow-hidden rounded-xl border border-white/10">
-          <img
-            src={p.image}
-            alt={`${p.title} screenshot`}
-            className="h-40 w-full object-cover transition duration-500 group-hover:scale-105"
-            loading="lazy"
-            onError={(e) => {
-              const target = e.currentTarget;
-              target.style.display = "none";
-            }}
-          />
-        </div>
+        <h3 className="mt-8">
+          <a
+            href={p.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Visit the ${p.title} website`}
+            className="group/title inline-flex items-start gap-2"
+          >
+            <GlitchText className="font-display text-3xl font-bold">
+              {p.title}
+            </GlitchText>
+            <span className="mt-1 text-[#39FF14] opacity-0 transition group-hover/title:opacity-100">
+              ↗
+            </span>
+          </a>
+        </h3>
 
-        <GlitchText className="mt-6 font-display text-3xl font-bold">
-          {p.title}
-        </GlitchText>
-        <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+        <p className="mt-4 text-sm leading-relaxed text-zinc-400">
           {p.description}
         </p>
 
@@ -172,16 +122,19 @@ function TiltCard({ p, i }: { p: Project; i: number }) {
           ))}
         </div>
 
-        <div className="mt-8 flex items-center justify-between">
-          <span className="font-mono text-[11px] uppercase tracking-widest text-[#39FF14] opacity-0 transition group-hover:opacity-100">
-            View Case Study
+        <a
+          href={p.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-auto inline-flex items-center justify-between gap-3 border-t border-white/10 pt-5 font-mono text-[11px] uppercase tracking-widest text-zinc-300 transition group-hover:text-[#39FF14]"
+        >
+          <span>Visit website</span>
+          <span className="grid h-8 w-8 place-items-center rounded-full border border-white/10 text-white transition group-hover:border-[#39FF14] group-hover:text-[#39FF14] group-hover:shadow-[0_0_18px_rgba(57,255,20,0.4)]">
+            ↗
           </span>
-          <span className="grid h-9 w-9 place-items-center rounded-full border border-white/10 text-white transition group-hover:border-[#39FF14] group-hover:text-[#39FF14] group-hover:shadow-[0_0_18px_rgba(57,255,20,0.4)]">
-            →
-          </span>
-        </div>
+        </a>
       </div>
-    </motion.a>
+    </motion.article>
   );
 }
 
@@ -208,7 +161,7 @@ export function Projects() {
 
         <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((p, i) => (
-            <TiltCard key={p.title} p={p} i={i} />
+            <ProjectCard key={p.title} p={p} i={i} />
           ))}
         </div>
       </div>

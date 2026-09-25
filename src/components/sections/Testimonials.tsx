@@ -70,7 +70,7 @@ export function Testimonials() {
         </FadeUp>
       </div>
 
-      <div className="relative mt-12 overflow-x-hidden">
+      <div className="relative mt-12 overflow-x-hidden group">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[#0A0A0A] to-transparent sm:w-24"
@@ -79,7 +79,7 @@ export function Testimonials() {
           aria-hidden
           className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[#0A0A0A] to-transparent sm:w-24"
         />
-        <div className="marquee-track flex w-max">
+        <div className="marquee-track flex w-max group-hover:animation-paused">
           {loop.map((q, i) => (
             <Card key={i} q={q} />
           ))}
